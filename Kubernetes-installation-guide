@@ -1,0 +1,21 @@
+create master and worker vm
+
+Step-1:
+
+  change hostname using hostnamectl on both vms
+    -- hostnamectl set-hostname k8s-master
+    -- hostnamectl set-hostname k8s-worker-1
+   
+Step-2:
+
+  disable swap
+    -- swapoff -a
+    
+Step-3:
+
+  add ports to firewall
+    -- firewall-cmd --permanent --add-port=6443/tcp
+    -- firewall-cmd --permanent --add-port=10250/tcp
+    
+   
+   
