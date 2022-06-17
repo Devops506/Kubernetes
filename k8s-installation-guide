@@ -27,3 +27,14 @@ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes systemctl en
 kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address=192.168.99.112 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
 yum install bash-completion echo "source <(kubectl completion bash)" >> ~/.bashrc
+
+
+
+Note : 
+sudo yum -y install docker; \
+ sudo service docker start; \
+ sudo usermod -a -G docker ec2-user; \
+ sudo chkconfig docker on; \
+ sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh -o /usr/local/bin/docker-compose; \
+ sudo chmod +x /usr/local/bin/docker-compose; \
+ sudo reboot;
