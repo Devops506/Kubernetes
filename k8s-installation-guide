@@ -38,3 +38,9 @@ sudo yum -y install docker; \
  sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh -o /usr/local/bin/docker-compose; \
  sudo chmod +x /usr/local/bin/docker-compose; \
  sudo reboot;
+ 
+ kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+ 
+ mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
