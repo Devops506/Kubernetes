@@ -65,7 +65,8 @@ sudo systemctl enable docker
 
 Install kubeadm and other important packages.
 
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes systemctl enable --now kubelet
+yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+systemctl enable --now kubelet
 kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address=192.168.99.112 
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
